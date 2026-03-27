@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:15
+    container_name: demo-db
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+    volumes: # Persistent data
+      - ../pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    image: back-img
+    container_name: demo-back
+    command: [sh, -c, "python manage.py runserver 0.0.0.0:8000"]
+    # command: [sh, -c, "gunicorn food_app_proj.wsgi --bind 0.0.0.0:8000 --reload &&
+    #                   python manage.py migrate"]
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    depends_on:
+      - db
