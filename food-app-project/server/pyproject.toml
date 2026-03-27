@@ -1,0 +1,35 @@
+[project]
+name = "fullstack-server"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "wang2929", email = "tifalsuk@gmail.com"},
+]
+dependencies = [
+    "asgiref==3.11.0",
+    "cfgv==3.5.0",
+    "distlib==0.4.0",
+    "Django==6.0.1",
+    "djangorestframework==3.16.1",
+    "filelock==3.25.2",
+    "gunicorn==25.1.0",
+    "identify==2.6.18",
+    "nodeenv==1.10.0",
+    "packaging==26.0",
+    "platformdirs==4.9.4",
+    "pre-commit==4.5.1",
+    "psycopg==3.3.2",
+    "psycopg-binary==3.3.2",
+    "python-discovery==1.2.0",
+    "PyYAML==6.0.3",
+    "sqlparse==0.5.5",
+    "typing-extensions==4.15.0",
+    "virtualenv==21.2.0",
+]
+requires-python = "==3.13.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
